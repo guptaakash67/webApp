@@ -6,16 +6,22 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 
-// Basic CORS setup for development
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174', 'https://web-app-ten-theta.vercel.app'],
+// Configure CORS
+const corsOptions = {
+  origin: function(origin, callback) {
+    const allowedOrigins = ['http://localhost:5173', 'http://localhost:5174', 'https://web-app-ten-theta.vercel.app'];
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-}));
+};
 
-// Pre-flight requests
-app.options('*', cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
