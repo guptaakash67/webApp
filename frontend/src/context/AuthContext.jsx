@@ -40,9 +40,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password) => {
+    // Create account but do NOT auto-login the user.
+    // The app should send the user to the login page after successful registration.
     const response = await api.post('/auth/register', { name, email, password });
-    localStorage.setItem('token', response.data.token);
-    setUser(response.data.user);
     return response.data;
   };
 
