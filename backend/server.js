@@ -6,13 +6,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 
-// Configure CORS with specific options
+// Enable CORS for all origins during testing
 app.use(cors({
-  origin: [
-    'http://localhost:5173', // Local development frontend
-    'https://web-app-ten-theta.vercel.app', // Production frontend
-    /\.vercel\.app$/ // Any Vercel deployment
-  ],
+  origin: true, // Allow all origins
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
