@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// Determine the base URL based on the environment
+const isDevelopment = import.meta.env.DEV;
+const baseURL = isDevelopment 
+  ? 'http://localhost:5000'
+  : 'https://web-app-backend-gamma.vercel.app';
+
 const api = axios.create({
-  baseURL: 'https://web-app-backend-gamma.vercel.app',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
