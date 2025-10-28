@@ -25,8 +25,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ MongoDB Connected'))
-  .catch((err) => console.error('❌ MongoDB Error:', err));
+  .then(() => console.log('MongoDB Connected'))
+  .catch((err) => console.error('MongoDB Error:', err));
 
 // Remove /api prefix since we're handling it in vercel.json
 app.use('/auth', require('./routes/auth'));
