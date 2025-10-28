@@ -7,17 +7,15 @@ dotenv.config();
 const app = express();
 
 // Configure CORS
-app.use(cors({
-  origin: 'https://web-app-ten-theta.vercel.app',
+const corsOptions = {
+  origin: ['https://web-app-ten-theta.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
   optionsSuccessStatus: 200
-}));
+};
 
-// Handle preflight requests
-app.options('*', cors());
-
+app.use(cors(corsOptions));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_URI)
