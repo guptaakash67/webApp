@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const handleOptions = require('../middleware/cors');
+
+// Handle preflight requests
+router.use(handleOptions);
 
 // Register
 router.post('/register', async (req, res) => {
