@@ -102,7 +102,7 @@ const Dashboard = () => {
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-600">Task Manager</h1>
+          <h1 className="text-2xl font-bold text-blue-600">web App</h1>
           <div className="flex items-center gap-4">
             <span className="text-gray-700">Welcome, <strong>{user?.name}</strong></span>
             <button
