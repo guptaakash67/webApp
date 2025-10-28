@@ -1,6 +1,6 @@
-# Task Manager Web Application
+#Web Application
 
-A full-stack task management application built with React, Node.js, Express, and MongoDB.
+A full-stack web application built with React, Node.js, Express, and MongoDB.
 
 ## 🚀 Features
 
