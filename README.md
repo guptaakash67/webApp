@@ -74,11 +74,6 @@ VITE_API_URL=http://localhost:5000
 
 ## 🚀 Deployment
 
-The application is deployed using Vercel:
-
-- Frontend: https://web-app-ten-theta.vercel.app
-- Backend: https://web-app-backend-gamma.vercel.app
-
 ### Local Development
 - Frontend runs on: http://localhost:5173
 - Backend runs on: http://localhost:5000
